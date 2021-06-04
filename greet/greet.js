@@ -3,7 +3,7 @@ function greet(existingNamesAlready) {
 
 
     var nameList = existingNamesAlready || [];
-
+    var isNumeric = /^[A-Za-z]+$/;
 
 
 
@@ -49,16 +49,16 @@ function greet(existingNamesAlready) {
         //let message = [];
         if (lang == null && name == "") {
 
-            return greetErrors.innerHTML = "please enter name and choose language";
+            return  "please enter name and choose language";
         } else if (name == "") {
 
-            return greetErrors.innerHTML = 'Name is required';
+            return  'Name is required';
             //setTimeout(function(){ greetErrors.value = "Name is required" }, 2000);
         } else if (lang == null) {
-            return greetErrors.innerHTML = "please select language";
+            return  "please select language";
         }
-        if (!isNumeric.test(greetName.value)) {
-            return greetErrors.innerHTML = "Letters are required";
+        if (!isNumeric.test(name)) {
+            return  "Letters are required";
         }
     }
 

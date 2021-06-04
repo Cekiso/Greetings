@@ -24,6 +24,7 @@ describe('greet function', function() {
             assert.equal(testingGreet.setLanguage('Sikelela', 'English'), 'Hello Sikelela');
         });
     });
+});
     describe('should be able to keep track of the names that are greeted', function() {
         it('should be able to track all the user names', function() {
             let testingGreet = greet();
@@ -48,6 +49,7 @@ describe('greet function', function() {
             testingGreet.setName('Nkuli')
             assert.equal(testingGreet.counter(), 1);
         });
+    });
         describe('should be able to test counter', function() {
             it('should increment the counter when a new name is greeted', function() {
                 let testingGreet = greet();
@@ -63,15 +65,37 @@ describe('greet function', function() {
                 let testingGreet = greet();
                 assert.equal(testingGreet.counter(), 0);
             });
-            describe('It should be to show errors if they is no name entered and language selected', function() {
-
-                it('It should show an error if they is no name entered', function() {
+        });
+            describe('It should be able to show errors' , function(){
+        
+                it('It should return an error if name is not entered' , function(){
                     let testingGreet = greet();
-                    testingGreet.setName('Isizulu', '');
-                    assert.equal(testingGreet.errorHandling('English', ''), 'Name is required');
-
+                    
+                    assert.equal(testingGreet.errorHandling('IsiZulu',''),'Name is required' );
+                    
+                   
+                });
+                it('It should return an error if language is not selecter' , function(){
+                    let testingGreet = greet();
+                    
+                    assert.equal(testingGreet.errorHandling(null,'Nkuli'),'please select language'  );
+                    
+                   
+                });
+                it('It should return an error if name and language are not entered' , function(){
+                    let testingGreet = greet();
+                    
+                    assert.equal(testingGreet.errorHandling(null,''),'please enter name and choose language');
+                    
+                   
+                });
+                it('It should return an error if the name is the number' , function(){
+                    let testingGreet = greet();
+                    
+                    assert.equal(testingGreet.errorHandling('English','12356898'),'Letters are required');
+                    
+                   
                 });
             });
-        })
-    })
-})
+    
+ 
