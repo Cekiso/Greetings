@@ -1,5 +1,5 @@
 body {
-    background: rgb(0, 255, 213) url("/img/tra.png") no-repeat fixed bottom left;
+    background: rgb(0, 255, 213) url("../img/tra.png") no-repeat fixed bottom left;
     text-align: center;
     font-size: 30px;
 }
