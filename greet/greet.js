@@ -6,6 +6,7 @@ function greet(existingNamesAlready) {
 
 
 
+
     function setLanguage(name, language) {
         if (language == "IsiXhosa" && name != "") {
             return "Molo " + name;
@@ -28,6 +29,7 @@ function greet(existingNamesAlready) {
         }
     }
 
+
     //create a function for the counter: return the length of the list
     function counter() {
         return nameList.length;
@@ -42,12 +44,30 @@ function greet(existingNamesAlready) {
 
     }
 
+    function errorHandling(lang, name) {
 
+        //let message = [];
+        if (lang == null && name == "") {
+
+            return greetErrors.innerHTML = "please enter name and choose language";
+        } else if (name == "") {
+
+            return greetErrors.innerHTML = 'Name is required';
+            //setTimeout(function(){ greetErrors.value = "Name is required" }, 2000);
+        } else if (lang == null) {
+            return greetErrors.innerHTML = "please select language";
+        }
+        if (!isNumeric.test(greetName.value)) {
+            return greetErrors.innerHTML = "Letters are required";
+        }
+    }
 
 
     return {
         setName,
         counter,
+        errorHandling,
+
         // storingCounter,
         // getName,
         setLanguage,

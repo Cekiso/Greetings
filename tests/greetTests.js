@@ -63,6 +63,15 @@ describe('greet function', function() {
                 let testingGreet = greet();
                 assert.equal(testingGreet.counter(), 0);
             });
-        });
+            describe('It should be to show errors if they is no name entered and language selected', function() {
+
+                it('It should show an error if they is no name entered', function() {
+                    let testingGreet = greet();
+                    testingGreet.setName('Isizulu', '');
+                    assert.equal(testingGreet.errorHandling('English', ''), 'Name is required');
+
+                });
+            });
+        })
     })
 })
