@@ -71,28 +71,28 @@ describe('greet function', function() {
                 it('It should return an error if name is not entered' , function(){
                     let testingGreet = greet();
                     
-                    assert.equal(testingGreet.errorHandling('IsiZulu',''),'Name is required' );
+                    assert.equal(testingGreet.errorHandlingtest('IsiZulu',''),'Name is required' );
                     
                    
                 });
                 it('It should return an error if language is not selecter' , function(){
                     let testingGreet = greet();
                     
-                    assert.equal(testingGreet.errorHandling(null,'Nkuli'),'please select language'  );
+                    assert.equal(testingGreet.errorHandlingtest(null,'Nkuli'),'please select language'  );
                     
                    
                 });
                 it('It should return an error if name and language are not entered' , function(){
                     let testingGreet = greet();
                     
-                    assert.equal(testingGreet.errorHandling(null,''),'please enter name and choose language');
+                    assert.equal(testingGreet.errorHandlingtest(null,''),'please enter name and choose language');
                     
                    
                 });
                 it('It should return an error if the name is the number' , function(){
                     let testingGreet = greet();
                     
-                    assert.equal(testingGreet.errorHandling('English','12356898'),'Letters are required');
+                    assert.equal(testingGreet.errorHandlingtest('English','12356898'),'Letters are required');
                     
                    
                 });

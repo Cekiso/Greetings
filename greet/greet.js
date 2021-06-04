@@ -4,6 +4,7 @@ function greet(existingNamesAlready) {
 
     var nameList = existingNamesAlready || [];
     var isNumeric = /^[A-Za-z]+$/;
+    var greetErrors = document.querySelector(".errors")
 
 
 
@@ -49,6 +50,24 @@ function greet(existingNamesAlready) {
         //let message = [];
         if (lang == null && name == "") {
 
+            return  greetErrors.innerHTML = "please enter name and choose language";
+        } else if (name == "") {
+
+            return  greetErrors.innerHTML = 'Name is required';
+            //setTimeout(function(){ greetErrors.value = "Name is required" }, 2000);
+        } else if (lang == null) {
+            return  greetErrors.innerHTML = "please select language";
+        }
+        if (!isNumeric.test(name) ){
+            return greetErrors.innerHTML = "Letters are required";
+        }
+    }
+
+    function errorHandlingtest(lang, name) {
+
+        //let message = [];
+        if (lang == null && name == "") {
+
             return  "please enter name and choose language";
         } else if (name == "") {
 
@@ -57,8 +76,8 @@ function greet(existingNamesAlready) {
         } else if (lang == null) {
             return  "please select language";
         }
-        if (!isNumeric.test(name)) {
-            return  "Letters are required";
+        if (!isNumeric.test(name) ){
+            return "Letters are required";
         }
     }
 
@@ -72,7 +91,8 @@ function greet(existingNamesAlready) {
         // getName,
         setLanguage,
         //errorHandling,
-        Names
+        Names,
+        errorHandlingtest
 
 
 
